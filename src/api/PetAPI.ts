@@ -13,7 +13,7 @@ export class PetAPI {
       return JSON.parse(await response.text());
     }
 
-    async createPet(id: number, petName: string, petCategory?: string): Promise<string> {
+    async createPet(id: number, petName: string, petCategory?: string): Promise<number> {
       const response = await this.context.post('/v2/pet', {
         data: {
           "id": id,
