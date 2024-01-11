@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",  
+    "module": "commonjs",
+    "sourceMap": true,                   
+    "outDir": "./build",
+    "noEmit": true, 
+    "strict": true,                          
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,                
+    "noUnusedParameters": true,            
+    "noImplicitReturns": true,             
+    "noFallthroughCasesInSwitch": true,    
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+     "esModuleInterop": true               
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

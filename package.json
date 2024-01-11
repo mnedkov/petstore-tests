@@ -1,0 +1,23 @@
+{
+  "name": "petstore_tests",
+  "version": "1.0.0",
+  "description": "Simple API tests against the petstore application.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "cucumber-js test"
+  },
+  "keywords": [],
+  "author": "Mihail Nedkov",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.6.0",
+    "@playwright/test": "^1.40.1",
+    "prettier": "3.0.2",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "playwright": "^1.40.1"
+  }
+}
