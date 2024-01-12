@@ -9,7 +9,7 @@ While there are many tools for API testing, including some specialized ones for 
 In addition, according to some studies, Playwright is becoming the nunmber one framework for E2E testing: 
 <img src="./e2e_testing_frameworks.png">
 
-Jest is definitely another great option but it is better for level unit tests rather than E2E testing.
+Jest is definitely another great option but it is better for low level unit tests rather than E2E testing.
 
 ## High level design of tha automation solution
 Apart from the boilerplate framework configuration code, this solutions has just a few classes that encapsulate the main business logic.
