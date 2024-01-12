@@ -7,7 +7,7 @@ This is a brief explanation of the solution.
 While there are many tools for API testing, including some specialized ones for testing APIs only, this solution uses Playwright. The reason is that Playwright is a great tool for UI testing and it is probably better to use the same framework across both API and UI.
 
 In addition, according to some studies, Playwright is becoming the nunmber one framework for E2E testing: 
-[<img src="./e2e_testing_frameworks.png">]
+<img src="./e2e_testing_frameworks.png">
 
 Jest is definitely another great option but it is better for level unit tests rather than E2E testing.
 
