@@ -11,7 +11,7 @@ In addition, according to some studies, Playwright is becoming the nunmber one f
 
 Jest is definitely another great option but it is better for low level unit tests rather than E2E testing.
 
-## High level design of tha automation solution
+## High level design of the automation solution
 Apart from the boilerplate framework configuration code, this solution has just a few classes that encapsulate the main business logic.
 
 [features/pet.feature](../features/pet.feature) has simple Gherkin for CRUD operations on pets. The goal here is to use language understandable by non technical stakeholders.
