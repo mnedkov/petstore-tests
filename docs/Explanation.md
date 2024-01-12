@@ -14,11 +14,11 @@ Jest is definitely another great option but it is better for level unit tests ra
 ## High level design of tha automation solution
 Apart from the boilerplate framework configuration code, this solutions has just a few classes that encapsulate the main business logic.
 
-[features/pet.feature](features/pet.feature) has simple Gherkin for CRUD operations on pets. The goal here is to use language understandable by non technical stakeholders.
+[features/pet.feature](../features/pet.feature) has simple Gherkin for CRUD operations on pets. The goal here is to use language understandable by non technical stakeholders.
 
-[src/steps/pet.ts](src/steps/pet.ts) has the code executing the steps. The goal here is to have steps that are reusable across different scenarios. For example, the step 'When I retrieve the pet by its id' is reused across multiple test scenarios. In addition, steps classes do not contain the core business logic of the solution, just step definitions and assertions. The business logic is abstracted into API classes following the separation of concerns principle.
+[src/steps/pet.ts](../src/steps/pet.ts) has the code executing the steps. The goal here is to have steps that are reusable across different scenarios. For example, the step 'When I retrieve the pet by its id' is reused across multiple test scenarios. In addition, steps classes do not contain the core business logic of the solution, just step definitions and assertions. The business logic is abstracted into API classes following the separation of concerns principle.
 
-[src/api/PetAPI.ts](src/api/PetAPI.ts) has all the API logic. Similarly to Page Objects in UI testing solutions, the API objects encapsulate logic for communicating with the API.
+[src/api/PetAPI.ts](../src/api/PetAPI.ts) has all the API logic. Similarly to Page Objects in UI testing solutions, the API objects encapsulate logic for communicating with the API.
 
 ## <a name="bug"></a> Obserations about the system under test
 While the main prupose of this solution is to demonstrate Cucumber + Playwright for API testing, in the course of creating the tests I discovered some potentially erroneos behavior of the Petstore app: when a pet is created with id < 1, the system automatically assignes some seemingly random ID. Sometimes the id assigned is too big, resulting in a Number Format Exception when trying to get the pet by id. Somtimes the id is just the id of another pet. I assumes that the intent here is when id = 0, to assign automatically a unique id e.g. through a db sequence because creating a new pet and providing its id is a bit clunky.Therefore there is a failing test which should pass once the bug is fixed.
