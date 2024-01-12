@@ -17,7 +17,7 @@ npm run test
 If configured properly, this should produce the following output:
 [<img src="./docs/console_output.png">]
 
-Due to a bug in the application under test, one of the tests is failing.
+Due to a [bug](./docs/Explanation.md#bug) in the application under test, one of the tests is failing.
 
 To view the test report with your favourite browser(e.g. chromium), type:
 ```bash

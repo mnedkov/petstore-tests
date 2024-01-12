@@ -20,6 +20,9 @@ Apart from the boilerplate framework configuration code, this solutions has just
 
 [src/api/PetAPI.ts](src/api/PetAPI.ts) has all the API logic. Similarly to Page Objects in UI testing solutions, the API objects encapsulate logic for communicating with the API.
 
+## <a name="bug"></a> Obserations about the system under test
+While the main prupose of this solution is to demonstrate Cucumber + Playwright for API testing, in the course of creating the tests I discovered some potentially erroneos behavior of the Petstore app: when a pet is created with id < 1, the system automatically assignes some seemingly random ID. Sometimes the id assigned is too big, resulting in a Number Format Exception when trying to get the pet by id. Somtimes the id is just the id of another pet. I assumes that the intent here is when id = 0, to assign automatically a unique id e.g. through a db sequence because creating a new pet and providing its id is a bit clunky.Therefore there is a failing test which should pass once the bug is fixed.
+
 ## Is Cucumber + Playwright a good combination?
 Cucumber is a great framework for doing BDD. It plays fairly with Playwright when it comes to API testing. However, when it comes to UI testing, Cucumber actually negates some of the most useful features of Playwright because it replaces the prominent Playwright JS reunner which brings some great features like DOM tree capturing, Network traffic capturing, and JS Console capturing to name a few. Therefore, it is better to **avoid** Cucumber for UI testing with Playwright. The same results can be achieved with Playwright alone through the use of describe, test, and step to produce non technical, business oriented reports of all executed tests.
 
